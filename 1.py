@@ -16,3 +16,5 @@ with sr.Microphone() as source:
     print("Ouvindo...")
     voz = audio,listen(source)
     comando = audio.recognize_google(voz, Language="pt-BR")
+    comando = comando.lower()
+    print(comando)
