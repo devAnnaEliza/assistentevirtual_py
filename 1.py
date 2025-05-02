@@ -3,7 +3,7 @@ import pyttsx3
 import datetime 
 import webbrowser
 import wikipedia
-import pywhatkit
+#import pywhatkit#
 import os
 
 audio = sr.Recognizer()
