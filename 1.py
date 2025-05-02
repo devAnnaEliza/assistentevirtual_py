@@ -15,11 +15,11 @@ maquina.runAndWait()
 with sr.Microphone() as source:
     print("Ouvindo...")
     voz = audio.listen(source)
-    comando = audio.recognize_google(voz, Language="pt-BR")
+    comando = audio.recognize_google(voz, Language = "pt-BR")
     comando = comando.lower()
     print(comando)
 
-    if "Luzia" in comando:
+    if 'luzia' in comando:
         comando = comando.replace('luzia', '')
         maquina.say(comando)
         maquina.runAndWait()
