@@ -12,17 +12,34 @@ maquina = pyttsx3.init()
 maquina.say("Olá, eu sou a Luzia, Como posso te ajudar?")
 maquina.runAndWait()
 
+def executar_comando():
 
+    try:
+        with sr.Microphone() as source:
+            print("Ouvindo...")
+            voz = audio.listen(source)
+            comando = audio.recognize_google(voz, language = "pt-BR")
+            comando = comando.lower()
+            print(comando)
 
-with sr.Microphone() as source:
-    print("Ouvindo...")
-    voz = audio.listen(source)
-    comando = audio.recognize_google(voz, language = "pt-BR")
-    comando = comando.lower()
-    print(comando)
+            if 'luzia' in comando:
+                comando = comando.replace('luzia', '')
+                #maquina.say(comando)
+                print(comando)
+                maquina.runAndWait()
 
-    if 'luzia' in comando:
-        comando = comando.replace('luzia', '')
-        maquina.say(comando)
-        print(comando)
+    except:
+        print("Microfone não encontrado")
+
+    return comando
+
+def comando_voz_usuario():
+    comando = executar_comando()
+
+    if 'horas' in comando:
+        horas = datetime.datetime.now().strftime('%H:%M')
+        maquina.say("Agora são " + horas)
+        print(f'Agora são {horas}.')
         maquina.runAndWait()
+
+comando_voz_usuario()
