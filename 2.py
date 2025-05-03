@@ -41,5 +41,10 @@ def comando_voz_usuario():
         maquina.say("Agora são " + horas)
         print(f'Agora são {horas}.')
         maquina.runAndWait()
+    elif 'youtube' in comando:
+        webbrowser.open('https://www.youtube.com')
+        exit()
+    elif 'procurar por' in comando:
+        
 
 comando_voz_usuario()
