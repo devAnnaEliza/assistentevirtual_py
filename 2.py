@@ -45,6 +45,10 @@ def comando_voz_usuario():
         webbrowser.open('https://www.youtube.com')
         exit()
     elif 'procurar por' in comando:
-        
+        procurar = comando.replace('procurar por', '')
+        wikipedia.set_lang('pt-BR')
+        resultado = wikipedia.summary(procurar, 2)
+        maquina.say(resultado)
+        maquina.runAndWait()
 
 comando_voz_usuario()
