@@ -18,4 +18,4 @@ Assistente virtual desenvolvido em Python com ativação por voz. Este projeto f
 - Web Browser
 - OS
 
-**ainda em desenvolvimento**
+** *ainda em desenvolvimento**
