@@ -9,8 +9,10 @@ import os
 audio = sr.Recognizer()
 maquina = pyttsx3.init()
 
-maquina.say("Olá, eu sou a Luzia, Como posse te ajudar?")
+maquina.say("Olá, eu sou a Luzia, Como posso te ajudar?")
 maquina.runAndWait()
+
+
 
 with sr.Microphone() as source:
     print("Ouvindo...")
