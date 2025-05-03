@@ -53,6 +53,9 @@ def comando_voz_usuario():
     elif 'calculadora' in comando:
         loc = 'C:\\Windows\\System32\\calc.exe'
         os.startfile(loc)
-        
+    
+    elif 'tchau' in comando:
+        maquina.say('Adeus, até mais!')
+        maquina.runAndWait()
 
 comando_voz_usuario()
