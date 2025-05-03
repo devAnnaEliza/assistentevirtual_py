@@ -22,4 +22,5 @@ with sr.Microphone() as source:
     if 'luzia' in comando:
         comando = comando.replace('luzia', '')
         maquina.say(comando)
+        print(comando)
         maquina.runAndWait()
