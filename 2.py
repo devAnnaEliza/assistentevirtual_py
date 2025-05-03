@@ -50,5 +50,9 @@ def comando_voz_usuario():
         resultado = wikipedia.summary(procurar, 2)
         maquina.say(resultado)
         maquina.runAndWait()
+    elif 'calculadora' in comando:
+        loc = 'C:\\Windows\\System32\\calc.exe'
+        os.startfile(loc)
+        
 
 comando_voz_usuario()
