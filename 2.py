@@ -59,3 +59,5 @@ def comando_voz_usuario():
         maquina.runAndWait()
 
 comando_voz_usuario()
+
+#add loop para perguntar qlqr coisa e add um break pra poder sair do loop e encerrar o assistente#
