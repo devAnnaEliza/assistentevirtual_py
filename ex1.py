@@ -24,3 +24,6 @@ with sr.Microphone() as source:
         maquina.say(comando)
         print(comando)
         maquina.runAndWait()
+
+
+#primeira etapa do projeto
