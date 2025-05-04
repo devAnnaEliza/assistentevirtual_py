@@ -1,6 +1,6 @@
 # Assistente Virtual por Voz 🗣️
 
-Assistente virtual desenvolvido em Python com ativação por voz. Este projeto foi desenvolvido como prática da plataforma Jornada do Dev e tem como objetivo permitir ao usuário realizar tarefas no computador utilizando comandos de voz.
+Assistente virtual desenvolvido em Python com ativação por voz. Este projeto foi desenvolvido como prática de um curso da plataforma Jornada do Dev e tem como objetivo permitir ao usuário realizar tarefas no computador utilizando comandos de voz.
 
 ## 📋 Funcionalidades
 
