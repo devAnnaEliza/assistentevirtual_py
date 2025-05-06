@@ -6,9 +6,11 @@ Assistente virtual desenvolvido em Python com ativação por voz. Este projeto f
 
 - Reconhecimento por voz
 - Síntese de voz
+- Interpretação de comando com NLP
 - Abertura de sites
 - Execução de programas do sistema
 - Encerramento por comando de voz
+- Mensagens de erro
 
 ## 📚 Tecnologias e bibliotecas utilizadas
 
@@ -17,5 +19,6 @@ Assistente virtual desenvolvido em Python com ativação por voz. Este projeto f
 - Pyttsx3 (Text-To-Speech)
 - Web Browser
 - OS
+- Transformers (Hugging Face)
 
 **ainda em desenvolvimento**
