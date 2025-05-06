@@ -39,5 +39,18 @@ def encerrar_assistente():
     falar("Até mais!")
     exit()
 
+def interpretar_comando(comando):
+    resultado = nlp(comando)
+    print(f"Interpretação do resiltado: {resultado}")
+    label = resultado[0]["label"]
+    if "time" in label or "hour" in comando:
+        dizer_horas()
+    elif "youtube" in comando:
+        abrir_youtube()
+    elif "exit" in comando or "bye" in comando:
+        encerrar_assistente()
+    else:
+        falar("Desculpe, não entendi.")
+    
 
 #add loop para perguntar qlqr coisa e add um break pra poder sair do loop e encerrar o assistente#
