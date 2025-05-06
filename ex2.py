@@ -52,5 +52,20 @@ def interpretar_comando(comando):
     else:
         falar("Desculpe, não entendi.")
     
-
+def ouvir_comando():
+    try:
+        with sr.Microphone() as source:
+            print("Ouvindo...")
+            voz = audio.listen(source)
+            comando = audio.recognize_google(voz, language="pt-BR")
+            comando = comando.lower()
+            print(f"Você disse: {comando}")
+            return comando
+    except sr.UnknownValueError:
+        falar("Desculpe, não entendi o que você disse.")
+        return ""
+    except sr.RequestError:
+        falar("Desculpe, não consigo acessar o serviço de reconhecimento de voz.")
+        return ""
+    
 #add loop para perguntar qlqr coisa e add um break pra poder sair do loop e encerrar o assistente#
