@@ -15,5 +15,11 @@ def falar(texto):
     maquina.say(texto)
     maquina.runAndWait()
 
+#comandos de voz
+def dizer_horas():
+    horas = datetime.datetime.now().strftime("%H?%M")
+    falar(f"Agora são {horas}")
+    print(f"Agora são {horas}")
+
 
 #add loop para perguntar qlqr coisa e add um break pra poder sair do loop e encerrar o assistente#
