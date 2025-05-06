@@ -4,9 +4,12 @@ import datetime
 import webbrowser
 #import pywhatkit#
 import os
+from transformers import pipeline
 
 audio = sr.Recognizer()
 maquina = pyttsx3.init()
+
+nlp = pipeline("text-classification", model="distilbert-base-uncased")
 
 maquina.say("Olá, eu sou a Luzia, Como posso te ajudar?")
 maquina.runAndWait()
