@@ -32,6 +32,7 @@ def executar_comando():
 
     return comando
 
-def 
+def falar(texto):
+    
 
 #add loop para perguntar qlqr coisa e add um break pra poder sair do loop e encerrar o assistente#
