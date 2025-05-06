@@ -1,3 +1,6 @@
+import tkinter as tk
+from tkinter import Label, Button
+
 import speech_recognition as sr
 import pyttsx3
 import datetime 
@@ -11,9 +14,6 @@ maquina = pyttsx3.init()
 
 nlp = pipeline("text-classification", model="distilbert-base-uncased")
 
-maquina.say("Olá, eu sou a Luzia, Como posso te ajudar?")
-maquina.runAndWait()
-
 def falar(texto):
     maquina.say(texto)
     maquina.runAndWait()
@@ -24,25 +24,25 @@ def dizer_horas():
     falar(f"Agora são {horas}")
     print(f"Agora são {horas}")
 
-def encerrar_assistente():
-    falar("Adeus, até logo!")
-    exit()
-
 def abrir_youtube():
     webbrowser.open("https://www.youtube.com")
     falar("Abrindo YouTube")
 
 def abrir_calculadora():
     loc = 'C:\\Windows\\System32\\calc.exe'
+    os.startfile(loc)
+    falar("Abrindo calculadora")
 
 def encerrar_assistente():
     falar("Até mais!")
+    root.destroy()
     exit()
 
 def interpretar_comando(comando):
     resultado = nlp(comando)
     print(f"Interpretação do resiltado: {resultado}")
     label = resultado[0]["label"]
+
     if "time" in label or "hour" in comando:
         dizer_horas()
     elif "youtube" in comando:
@@ -69,8 +69,25 @@ def ouvir_comando():
         return ""
     
 #loop 
-falar("Olá, eu sou a Luzia. Como posso ajudar?")
-while True:
-    comando = ouvir_comando()
-    if comando:
-        interpretar_comando(comando)
+def iniciar_assistente():
+    falar("Olá, eu sou a Luzia. Como posso ajudar?")
+    while True:
+        comando = ouvir_comando()
+        if comando:
+            interpretar_comando(comando)
+
+#interface
+root = tk.Tk()
+root.Title("Assistente Virtual Luzia")
+root.geometry("400x300")
+
+label = Label(root, text="Assistente Virtual Luzia", font=("Arial", 16))
+Label.pack(pady=20)
+
+botao_iniciar = Button(root, text="Iniciar Assistente", command=iniciar_assistente, font=("Arial", 14))
+botao_iniciar.pack(pady=10)
+
+botao_encerrar = Button(root, text="Encerrar Assistente",command=encerrar_assistente, font=("Arial", 14))
+botao_encerrar.pack(pady=10)
+
+falar("Bem-vindo a Assistente Virtual Luzia!")
