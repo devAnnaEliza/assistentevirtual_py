@@ -32,25 +32,6 @@ def executar_comando():
 
     return comando
 
-def comando_voz_usuario():
-    comando = executar_comando()
-
-    if 'horas' in comando:
-        horas = datetime.datetime.now().strftime('%H:%M')
-        maquina.say("Agora são " + horas)
-        print(f'Agora são {horas}.')
-        maquina.runAndWait()
-    elif 'youtube' in comando:
-        webbrowser.open('https://www.youtube.com')
-        exit()
-    elif 'calculadora' in comando:
-        loc = 'C:\\Windows\\System32\\calc.exe'
-        os.startfile(loc)
-    
-    elif 'tchau' in comando:
-        maquina.say('Adeus, até mais!')
-        maquina.runAndWait()
-
-comando_voz_usuario()
+def 
 
 #add loop para perguntar qlqr coisa e add um break pra poder sair do loop e encerrar o assistente#
