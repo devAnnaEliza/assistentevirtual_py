@@ -68,4 +68,9 @@ def ouvir_comando():
         falar("Desculpe, não consigo acessar o serviço de reconhecimento de voz.")
         return ""
     
-#add loop para perguntar qlqr coisa e add um break pra poder sair do loop e encerrar o assistente#
+#loop 
+falar("Olá, eu sou a Luzia. Como posso ajudar?")
+while True:
+    comando = ouvir_comando()
+    if comando:
+        interpretar_comando(comando)
