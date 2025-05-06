@@ -43,12 +43,6 @@ def comando_voz_usuario():
     elif 'youtube' in comando:
         webbrowser.open('https://www.youtube.com')
         exit()
-    elif 'procurar por' in comando:
-        procurar = comando.replace('procurar por', '')
-        wikipedia.set_lang('pt-BR')
-        resultado = wikipedia.summary(procurar, 2)
-        maquina.say(resultado)
-        maquina.runAndWait()
     elif 'calculadora' in comando:
         loc = 'C:\\Windows\\System32\\calc.exe'
         os.startfile(loc)
