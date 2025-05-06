@@ -24,5 +24,20 @@ def dizer_horas():
     falar(f"Agora são {horas}")
     print(f"Agora são {horas}")
 
+def encerrar_assistente():
+    falar("Adeus, até logo!")
+    exit()
+
+def abrir_youtube():
+    webbrowser.open("https://www.youtube.com")
+    falar("Abrindo YouTube")
+
+def abrir_calculadora():
+    loc = 'C:\\Windows\\System32\\calc.exe'
+
+def encerrar_assistente():
+    falar("Até mais!")
+    exit()
+
 
 #add loop para perguntar qlqr coisa e add um break pra poder sair do loop e encerrar o assistente#
