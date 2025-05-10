@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistente Virtual Luzia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .response {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Assistente Virtual Luzia</h1>
+    <input type="text" id="comando" placeholder="Digite um comando">
+    <button onclick="enviarComando()">Enviar</button>
+    <div class="response" id="resposta"></div>
+
+    <script>
+        async function enviarComando() {
+            const comando = document.getElementById('comando').value;
+            const respostaDiv = document.getElementById('resposta');
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/comando', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ comando }),
+                });
+
+                const data = await response.json();
+                respostaDiv.textContent = data.resposta;
+            } catch (error) {
+                respostaDiv.textContent = "Erro ao se comunicar com o servidor.";
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>
